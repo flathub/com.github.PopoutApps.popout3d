@@ -12,15 +12,19 @@ finish-args:
   - --filesystem=host
 
 modules:
-
   - name: python3-pillow
     buildsystem: simple
     build-commands:
-      - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} Pillow
+      # - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} Pillow #ORIGINAL
+      - pip3 install . --prefix=${FLATPAK_DEST}
     sources:
-      - type: file
-        url: https://files.pythonhosted.org/packages/3c/7e/443be24431324bd34d22dd9d11cc845d995bcd3b500676bcf23142756975/Pillow-5.4.1.tar.gz
-        sha256: 5233664eadfa342c639b9b9977190d64ad7aca4edc51a966394d7e08e7f38a9f
+      #- type: file #ORIGINAL
+        #    url: https://files.pythonhosted.org/packages/3c/7e/443be24431324bd34d22dd9d11cc845d995bcd3b500676bcf23142756975/Pillow-5.4.1.tar.gz
+        #    sha256: 5233664eadfa342c639b9b9977190d64ad7aca4edc51a966394d7e08e7f38a9f
+        # 1.5.3 for later version of pillow
+      - type: archive
+        url: https://github.com/python-pillow/Pillow/archive/refs/tags/8.3.2.tar.gz
+        sha256: 8252b6b514aed2743abb5b7259b3253d6c4bf86902b9c5acd33fe79d24ec7b2f
 
   # align_image_stack deps
   - shared-modules/glew/glew.json
@@ -109,7 +113,7 @@ modules:
       - type: archive
         url: https://github.com/ukoethe/vigra/archive/Version-1-11-1.tar.gz
         sha256: b2718250d28baf1932fcbe8e30f7e4d146e751ad0e726e375a72a0cdb4e3250e
-        # 1.5.2 still latest
+        # 1.5.2, 1.5.4 still latest
     cleanup:
       - /bin
       - /doc
@@ -122,9 +126,12 @@ modules:
       # 0.5.2-2 old not available - type: git
       #  url: https://github.com/Exiv2/exiv2/
       #  commit: e7ffd83af29187190da7f98dcbca8a4d70e19582
-      - type: archive
-        url: http://www.exiv2.org/builds/exiv2-0.27.5-Source.tar.gz
-        sha256: 35a58618ab236a901ca4928b0ad8b31007ebdc0386d904409d825024e45ea6e2
+      #- type: archive #1.5.2 # Now gives 404 error
+      #  url: http://www.exiv2.org/builds/exiv2-0.27.5-Source.tar.gz
+      #  sha256: 35a58618ab236a901ca4928b0ad8b31007ebdc0386d904409d825024e45ea6e2
+      - type: git
+        tag: v0.27.5
+        url: https://github.com/Exiv2/exiv2.git        
     cleanup:
       - /bin
       - /share/man
@@ -144,9 +151,10 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     sources:
+      #- type: file
       #  url: https://downloads.sourceforge.net/project/hugin/hugin/hugin-2018.0/hugin-2018.0.0.tar.bz2
       #  sha256: d3af0d066ac50e3bb243a175a64ecda136d87178419457e8822e11bcf0e565cb
-      # 1.5.2
+      # 1.5.3
       - type: archive
         url: https://sourceforge.net/projects/hugin/files/hugin/hugin-2020.0/hugin-2020.0.0.tar.bz2
         sha256: 283e7601259a7914cb075333424410928a439dc5f84216f33e2fe55501fbcacb
@@ -180,7 +188,6 @@ modules:
   - name: popout3d
     buildsystem: meson
     sources:
-      - type: git
-        tag: V1.5.2
-        url: https://github.com/PopoutApps/popout3d
-
+    - type: git
+      tag: V1.5.3
+      url: https://github.com/PopoutApps/popout3d
