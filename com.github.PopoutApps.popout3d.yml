@@ -1,6 +1,7 @@
 app-id: com.github.PopoutApps.popout3d
 runtime: org.gnome.Platform
-runtime-version: "41"
+#runtime-version: "41" Up to V1.5.3
+runtime-version: "43" #From V1.5.31
 sdk: org.gnome.Sdk
 
 command: popout3d
@@ -9,7 +10,7 @@ finish-args:
   - --share=ipc
   - --socket=fallback-x11
   - --socket=wayland
-  - --filesystem=host
+  - --filesystem=home #was   #- --filesystem=host
 
 modules:
   - name: python3-pillow
