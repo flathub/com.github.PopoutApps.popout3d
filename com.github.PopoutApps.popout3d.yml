@@ -10,7 +10,8 @@ finish-args:
   - --share=ipc
   - --socket=fallback-x11
   - --socket=wayland
-  - --filesystem=home #was   #- --filesystem=host
+  - --filesystem=home
+  - --device=dri #1.6.01 OpenGL rendering
 
 modules:
   - name: python3-pillow
@@ -57,9 +58,13 @@ modules:
       #  url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.tar.bz2
       #  sha256: 96157f988d261b7368e5340afa1a0cad943768f35929c22841f62c25b17bf7f0
       # 1.5.2
-      - type: git
-        tag: v3.1.5
-        url: https://github.com/wxWidgets/wxWidgets
+      #- type: git
+      #  tag: v3.1.5
+      #  url: https://github.com/wxWidgets/wxWidgets
+      # from 1.6.01
+      - type: archive
+        url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.2/wxWidgets-3.2.2.tar.bz2
+        sha256: 8edf18672b7bc0996ee6b7caa2bee017a9be604aad1ee471e243df7471f5db5d
     cleanup:
       - /bin
       - /lib
