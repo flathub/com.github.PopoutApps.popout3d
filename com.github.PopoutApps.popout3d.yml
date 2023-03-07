@@ -35,7 +35,7 @@ modules:
   - name: wxWidgets
     #cleanup: #1.5.3 tautology
     #  - /bin
-    #  - /share/bakefile
+    #  - /share/bakefile << could add this back in
     config-opts:
       - --with-opengl
       - --with-libjpeg
