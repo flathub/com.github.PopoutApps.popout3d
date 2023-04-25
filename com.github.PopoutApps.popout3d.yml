@@ -193,7 +193,26 @@ modules:
   - name: popout3d
     buildsystem: meson
     sources:
-    - type: git
-      tag: main
-      url: https://github.com/PopoutApps/popout3d
-
+    #- type: git
+    #  tag: main
+    #  url: https://github.com/PopoutApps/popout3d
+    - type: file
+      path: /home/chris/git/popout3d/popout3d.py
+    - type: file
+      path: /home/chris/git/popout3d/README.md
+    - type: file
+      path: /home/chris/git/popout3d/com.github.PopoutApps.popout3d64x64.png
+    - type: file
+      path: /home/chris/git/popout3d/com.github.PopoutApps.popout3d.png
+    - type: file
+      path: /home/chris/git/popout3d/com.github.PopoutApps.popout3d.desktop
+    - type: file
+      path: /home/chris/git/popout3d/com.github.PopoutApps.popout3d.appdata.xml
+    - type: file
+      path: /home/chris/git/popout3d/meson.build
+    - type: file
+      path: /home/chris/git/popout3d/dummy.png
+    - type: file
+      path: /home/chris/git/popout3d/popout3d_nl_NL.mo
+    - type: file
+      path: /home/chris/git/popout3d/popout3d_de_DE.mo      
