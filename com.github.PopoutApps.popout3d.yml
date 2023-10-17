@@ -2,7 +2,7 @@ app-id: com.github.PopoutApps.popout3d
 runtime: org.gnome.Platform
 #runtime-version: "41" Up to V1.5.3
 #runtime-version: "43" #From V1.5.31
-runtime-version: "45" #From 17th Oct 2023
+runtime-version: "45" #From V1.5.42
 
 sdk: org.gnome.Sdk
 
@@ -163,8 +163,12 @@ modules:
       #  sha256: d3af0d066ac50e3bb243a175a64ecda136d87178419457e8822e11bcf0e565cb
       # 1.5.3
       - type: archive
-        url: https://sourceforge.net/projects/hugin/files/hugin/hugin-2020.0/hugin-2020.0.0.tar.bz2
-        sha256: 283e7601259a7914cb075333424410928a439dc5f84216f33e2fe55501fbcacb
+        #url: https://sourceforge.net/projects/hugin/files/hugin/hugin-2020.0/hugin-2020.0.0.tar.bz2
+        #sha256: 283e7601259a7914cb075333424410928a439dc5f84216f33e2fe55501fbcacb
+        # from 17th Oct 2023
+         
+        url: https://sourceforge.net/projects/hugin/files/hugin/hugin-2023.0/hugin-2023.0beta1.tar.bz2 # may need to remove "download" from url.
+        sha1: f36124c380fea75ecc052a0ca2f69e734865deaf
 
     cleanup:
       - /bin/autooptimiser
@@ -198,4 +202,3 @@ modules:
     - type: git
       tag: main
       url: https://github.com/PopoutApps/popout3d
-
