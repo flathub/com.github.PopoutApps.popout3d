@@ -2,8 +2,7 @@ app-id: com.github.PopoutApps.popout3d
 runtime: org.gnome.Platform
 #runtime-version: "41" Up to V1.5.3
 #runtime-version: "43" #From V1.5.31
-runtime-version: "45" #From 17th Oct 2023
-
+runtime-version: "45" #From V1.6.41
 sdk: org.gnome.Sdk
 
 command: popout3d
