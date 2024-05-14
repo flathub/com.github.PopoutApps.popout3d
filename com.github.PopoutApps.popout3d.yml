@@ -2,7 +2,7 @@ app-id: com.github.PopoutApps.popout3d
 runtime: org.gnome.Platform
 #runtime-version: "41" Up to V1.5.3
 #runtime-version: "43" #From V1.5.31
-runtime-version: "45" #From V1.6.41
+runtime-version: "45" #From V1.6.41 #From 17th Oct 2023
 sdk: org.gnome.Sdk
 
 command: popout3d
@@ -162,8 +162,11 @@ modules:
       #  sha256: d3af0d066ac50e3bb243a175a64ecda136d87178419457e8822e11bcf0e565cb
       # 1.5.3
       - type: archive
-        url: https://sourceforge.net/projects/hugin/files/hugin/hugin-2020.0/hugin-2020.0.0.tar.bz2
-        sha256: 283e7601259a7914cb075333424410928a439dc5f84216f33e2fe55501fbcacb
+        #url: https://sourceforge.net/projects/hugin/files/hugin/hugin-2020.0/hugin-2020.0.0.tar.bz2
+        #sha256: 283e7601259a7914cb075333424410928a439dc5f84216f33e2fe55501fbcacb
+        # 1.6.43
+        url: https://sourceforge.net/projects/hugin/files/hugin/hugin-2023.0/hugin-2023.0.0.tar.bz2
+        sha1: 78d3fb8732e50b37b4db4d3abe3e29b1f8e74653
 
     cleanup:
       - /bin/autooptimiser
@@ -197,4 +200,23 @@ modules:
     - type: git
       tag: main
       url: https://github.com/PopoutApps/popout3d
-
+    #- type: file
+    #  path: /home/chris/git/popout3d/popout3d.py
+    #- type: file
+    #  path: /home/chris/git/popout3d/README.md
+    #- type: file
+    #  path: /home/chris/git/popout3d/com.github.PopoutApps.popout3d64x64.png
+    #- type: file
+    #  path: /home/chris/git/popout3d/com.github.PopoutApps.popout3d.png
+    #- type: file
+    #  path: /home/chris/git/popout3d/com.github.PopoutApps.popout3d.desktop
+    #- type: file
+    #  path: /home/chris/git/popout3d/com.github.PopoutApps.popout3d.appdata.xml
+    #- type: file
+    #  path: /home/chris/git/popout3d/meson.build
+    #- type: file
+    #  path: /home/chris/git/popout3d/dummy.png
+    #- type: file
+    #  path: /home/chris/git/popout3d/popout3d_nl_NL.mo
+    #- type: file
+    #  path: /home/chris/git/popout3d/popout3d_de_DE.mo 
